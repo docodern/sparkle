@@ -44,7 +44,7 @@ const Supporters = ({ slice }) => {
                 <PrismicNextImage
                   field={slice.primary.bg_image}
                   sizes="100vw"
-                  className="absolute h-full w-full object-cover bottom-[-50px] left-0 z-10 xl:h-auto"
+                  className="absolute h-full w-screen object-cover bottom-[-50px] left-0 z-10 xl:h-auto"
                 />
               )}
     </Bounded>

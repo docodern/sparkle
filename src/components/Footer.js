@@ -23,12 +23,13 @@ export function Footer({ settings, navigation }) {
 
 
   return (
-    <Bounded as="footer" yPadding="none" className="relative pb-12 bg-night">
+    <Bounded as="footer" yPadding="none" className="relative pb-12 bg-gradient-to-t from-night from-95% to-white">
         {prismic.isFilled.image(settings.data.footer_logo) && (
                 <PrismicNextImage
                   field={settings.data.footer_logo}
                   sizes="100vw"
                   className="absolute w-[100px] h-auto top-12 left-5 z-50 md:w-[162px] md:left-16 xl:left-20 md:top-20 xl:w-[182px] 2xl:left-[calc((100vw-1380px)/2)]"
+                  loading="lazy"
                 />
               )}
         <div className="relative text-white font-montserrat text-xs font-medium z-50 pt-32 md:flex md:flex-row md:justify-between md:items-end md:text-right md:text-xl md:pt-20 xl:items-start xl:ml-60">
@@ -64,6 +65,7 @@ export function Footer({ settings, navigation }) {
                       field={item.social_icon}
                       sizes="100vw"
                       className="relative h-[25px] w-auto mr-6 my-5 md:mr-0 md:ml-12 md:my-10"
+                      loading="lazy"
                     />
                     ))}
                 </span>
@@ -78,8 +80,9 @@ export function Footer({ settings, navigation }) {
         {prismic.isFilled.image(settings.data.bg_image) && (
                 <PrismicNextImage
                   field={settings.data.bg_image}
-                  sizes="100vw"
-                  className="absolute h-auto w-full object-cover top-[-30px] left-0 z-40"
+                  sizes="screen"
+                  className="absolute h-auto w-screen top-[-40px] left-0 z-40"
+                  loading="lazy"
                 />
               )}
     </Bounded>

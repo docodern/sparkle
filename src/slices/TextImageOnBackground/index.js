@@ -7,8 +7,8 @@ const TextImageOnBackground = ({ slice }) => {
       {prismic.isFilled.image(slice.primary.bg_image) && (
               <PrismicNextImage
                 field={slice.primary.bg_image}
-                sizes="100vw"
-                className="absolute top-0 left-0 h-full w-full object-cover"
+                sizes="screen"
+                className="absolute top-0 left-0 h-full w-screen object-cover xl:h-auto"
               />
             )}
       {prismic.isFilled.image(slice.primary.image) && (

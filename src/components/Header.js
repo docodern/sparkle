@@ -5,7 +5,7 @@ import { Bounded } from "./Bounded";
 import { MobileMenu } from "./NavMenu/MobileMenu";
 import { DesktopMenu } from "./NavMenu/DesktopMenu";
 import React, { useState } from "react";
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const localeLabels = {
   "en-eu": "EN",
@@ -16,7 +16,6 @@ const localeLabels = {
 export function Header({ locales = [], navigation, settings }) {
 
     const pathname = usePathname();
-    const router = useRouter();
     const [open, setOpen] = useState(false);
 
   return (
@@ -24,8 +23,9 @@ export function Header({ locales = [], navigation, settings }) {
         <div id="menuBottomImg" className="absolute w-full h-auto left-0 top-[42px] z-40 md:top-[70px] xl:top-[90px]">
                     <PrismicNextImage
                     field={settings.data.menu_image}
-                    sizes="100vw"
-                    className="w-full h-auto"
+                    sizes="screen"
+                    className="w-screen h-auto"
+                    loading="lazy"
                     />
             </div>
         <div className="relative flex flex-row items-center justify-between w-full h-full z-50 bg-white">

@@ -54,14 +54,14 @@ const GalleryBlock = ({ slice }) => {
               <PrismicNextImage
                 field={slice.primary.toprippedimg}
                 sizes="100vw"
-                className="absolute w-full h-auto top-0 left-0"
+                className="absolute w-screen h-auto top-0 left-0"
               />
           )}
           {prismic.isFilled.image(slice.primary.bottomrippedimg) && (
               <PrismicNextImage
                 field={slice.primary.bottomrippedimg}
                 sizes="100vw"
-                className="absolute w-full h-auto bottom-0 left-0"
+                className="absolute w-screen h-auto bottom-0 left-0"
               />
           )}
     </section>

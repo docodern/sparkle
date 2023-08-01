@@ -21,7 +21,7 @@ const VideoBloks = ({ slice }) => {
         <h1 className="mt-12 md:mt-16">{slice.primary.title}</h1>
       )}
       <div className="relative">
-        <video id="video" controls muted preload="auto" poster={slice.primary.videoimage.url} className="relative w-full object-cover">
+        <video id="video" controls muted preload="none" poster={slice.primary.videoimage.url} className="relative w-full object-cover">
           <source src={prismic.isFilled.linkToMedia(slice.primary.video) && slice.primary.video.url} />
         </video>
             {prismic.isFilled.image(slice.primary.playimage) && (
@@ -29,8 +29,9 @@ const VideoBloks = ({ slice }) => {
                 id="playButton"
                 field={slice.primary.playimage}
                 sizes="w-50 md:w-86"
-                className="absolute top-[calc(50%-55px)] left-[calc(50%-45px)]"
+                className="absolute top-[calc(50%-45px)] left-[calc(50%-45px)] md:top-[calc(50%-80px)]"
                 onClick={() => video.play()}
+                loading="lazy"
               />
             )}
       </div>

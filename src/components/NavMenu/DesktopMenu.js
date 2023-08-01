@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function LangDropdown({locales, localeLabels, navigation, open, setOpen}) {
     return (
-        <div className={`${open ? "block" : "hidden"} flex flex-col gap-6 bg-white absolute px-20 py-6 right-0 top-[60px]`}>
+        <div className={`${open ? "block" : "hidden"} flex flex-col gap-6 bg-white absolute px-20 py-6 right-[-80px] top-[60px] overflow-hidden`}>
             { locales.map((locale) => (
                 navigation.lang !== locale.lang ?
                 <li key={locale.lang}>
