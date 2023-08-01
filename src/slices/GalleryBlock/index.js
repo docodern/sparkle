@@ -11,6 +11,7 @@ const GalleryBlock = ({ slice }) => {
                   field={slice.primary.image_1}
                   sizes="100vw"
                   className="relative w-100vw h-auto"
+                  loading="lazy"
                 />
               )}
               {prismic.isFilled.image(slice.primary.image_2) && (
@@ -18,6 +19,7 @@ const GalleryBlock = ({ slice }) => {
                   field={slice.primary.image_2}
                   sizes="100vw"
                   className="relative w-100vw h-auto"
+                  loading="lazy"
                 />
               )}
             </div>
@@ -26,6 +28,7 @@ const GalleryBlock = ({ slice }) => {
                   field={slice.primary.image_3}
                   sizes="100vw"
                   className="relative w-100vw h-auto"
+                  loading="lazy"
                 />
               )}
           </div>
@@ -35,6 +38,7 @@ const GalleryBlock = ({ slice }) => {
                     field={slice.primary.image_4}
                     sizes="100vw"
                     className="relative w-100vw h-auto"
+                    loading="lazy"
                   />
               )}
             {prismic.isFilled.image(slice.primary.image_5) && (
@@ -42,6 +46,7 @@ const GalleryBlock = ({ slice }) => {
                 field={slice.primary.image_5}
                 sizes="100vw"
                 className="relative w-100vw h-auto"
+                loading="lazy"
               />
             )}
           </div>
