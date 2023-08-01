@@ -23,11 +23,7 @@ export function MobileMenu({ locales, localeLabels, navigation, open, pathname, 
                 </ul>
                 <ul className="flex flex-col gap-6 text-center">
                     {navigation.data?.links.map((item) => (
-                        <li key={prismic.asText(item.label)} className={`${(
-                            (navigation.lang !== "lv") ? 
-                                (item.link?.url.split("/")[2] ? 
-                                    "/"+item.link.url.split("/")[2] : "/") 
-                                    : item.link.url) === pathname ? "active" : ""}`}>
+                        <li key={prismic.asText(item.label)} className={`${("/" + item.link.slug) === pathname ? "active" : ""}`}>
                             <PrismicNextLink field={item.link} onClick={() => setOpen(false)}>
                                 <PrismicText field={item.label} />
                             </PrismicNextLink>
