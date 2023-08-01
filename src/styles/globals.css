@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oswald:wght@500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white,
+[data-collapsible="true"].bg-slate-100
+  + [data-collapsible="true"].bg-slate-100 {
+  @apply pt-0 md:pt-0;
+}
+
+@layer base {
+
+  h1 {
+    @apply font-oswald font-medium text-center text-4xl text-night mb-10 md:mb-16 md:text-5xl uppercase
+  }
+
+  nav ul li.active {
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-decoration-color: #FFA800;
+  }
+}

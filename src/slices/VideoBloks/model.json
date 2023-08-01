@@ -1,0 +1,39 @@
+{
+  "id": "video_bloks",
+  "type": "SharedSlice",
+  "name": "VideoBloks",
+  "description": "VideoBloks",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        },
+        "videoimage": {
+          "type": "Image",
+          "config": {
+            "label": "VideoImage",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "playimage": {
+          "type": "Image",
+          "config": { "label": "PlayImage", "constraint": {}, "thumbnails": [] }
+        },
+        "video": {
+          "type": "Link",
+          "config": { "label": "Video", "placeholder": "", "select": "media" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

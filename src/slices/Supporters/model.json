@@ -1,0 +1,43 @@
+{
+  "id": "supporters",
+  "type": "SharedSlice",
+  "name": "Supporters",
+  "description": "Supporters",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        },
+        "image_1": {
+          "type": "Image",
+          "config": { "label": "Image 1", "constraint": {}, "thumbnails": [] }
+        },
+        "image_2": {
+          "type": "Image",
+          "config": { "label": "Image 2", "constraint": {}, "thumbnails": [] }
+        },
+        "image_3": {
+          "type": "Image",
+          "config": { "label": "Image 3", "constraint": {}, "thumbnails": [] }
+        },
+        "image_4": {
+          "type": "Image",
+          "config": { "label": "Image 4", "constraint": {}, "thumbnails": [] }
+        },
+        "bg_image": {
+          "type": "Image",
+          "config": { "label": "Bg image", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

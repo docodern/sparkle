@@ -1,0 +1,31 @@
+{
+  "id": "text_image_on_background",
+  "type": "SharedSlice",
+  "name": "TextImageOnBackground",
+  "description": "TextImageOnBackground",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+        },
+        "text": {
+          "type": "Text",
+          "config": { "label": "Text", "placeholder": "" }
+        },
+        "bg_image": {
+          "type": "Image",
+          "config": { "label": "Bg image", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

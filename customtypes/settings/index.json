@@ -1,0 +1,103 @@
+{
+  "id": "settings",
+  "label": "Settings",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "siteTitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Site Title",
+          "placeholder": "Title of the site",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      },
+      "logo": {
+        "type": "Image",
+        "config": { "constraint": {}, "thumbnails": [], "label": "Logo" }
+      },
+      "menu_image": {
+        "type": "Image",
+        "config": { "label": "Menu Image", "constraint": {}, "thumbnails": [] }
+      },
+      "menu_burger": {
+        "type": "Image",
+        "config": { "label": "Menu Burger", "constraint": {}, "thumbnails": [] }
+      },
+      "menu_close": {
+        "type": "Image",
+        "config": { "label": "Menu Close", "constraint": {}, "thumbnails": [] }
+      }
+    },
+    "Footer": {
+      "name": {
+        "type": "Text",
+        "config": { "label": "Name", "placeholder": "" }
+      },
+      "email": {
+        "type": "Text",
+        "config": { "label": "Email", "placeholder": "" }
+      },
+      "phone": {
+        "type": "Text",
+        "config": { "label": "Phone", "placeholder": "" }
+      },
+      "address": {
+        "type": "Text",
+        "config": { "label": "Address", "placeholder": "" }
+      },
+      "open_details": {
+        "type": "Text",
+        "config": { "label": "Open details", "placeholder": "" }
+      },
+      "close_details": {
+        "type": "Text",
+        "config": { "label": "Close details", "placeholder": "" }
+      },
+      "company": {
+        "type": "Text",
+        "config": { "label": "Company", "placeholder": "" }
+      },
+      "regnr": {
+        "type": "Text",
+        "config": { "label": "RegNr", "placeholder": "" }
+      },
+      "bank": {
+        "type": "Text",
+        "config": { "label": "Bank", "placeholder": "" }
+      },
+      "iban": {
+        "type": "Text",
+        "config": { "label": "IBAN", "placeholder": "" }
+      },
+      "copyright": {
+        "type": "Text",
+        "config": { "label": "Copyright", "placeholder": "" }
+      },
+      "privacy_text": {
+        "type": "Text",
+        "config": { "label": "Privacy text", "placeholder": "" }
+      },
+      "privacy_link": {
+        "type": "Link",
+        "config": { "label": "Privacy link", "placeholder": "", "select": null }
+      },
+      "bg_image": {
+        "type": "Image",
+        "config": { "label": "Bg Image", "constraint": {}, "thumbnails": [] }
+      },
+      "footer_logo": {
+        "type": "Image",
+        "config": { "label": "Footer logo", "constraint": {}, "thumbnails": [] }
+      },
+      "slices1": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "footer": { "type": "SharedSlice" } } }
+      }
+    }
+  }
+}

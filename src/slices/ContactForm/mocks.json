@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "planning",
+				"type": "Text"
+			},
+			"name_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "somebody",
+				"type": "Text"
+			},
+			"email_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "tried",
+				"type": "Text"
+			},
+			"phone_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "broken",
+				"type": "Text"
+			},
+			"text_placeholder": {
+				"__TYPE__": "FieldContent",
+				"value": "sea",
+				"type": "Text"
+			},
+			"required": {
+				"__TYPE__": "FieldContent",
+				"value": "region",
+				"type": "Text"
+			},
+			"checkbox_text": {
+				"__TYPE__": "FieldContent",
+				"value": "melted",
+				"type": "Text"
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "clearly",
+				"type": "Text"
+			},
+			"sent_title": {
+				"__TYPE__": "FieldContent",
+				"value": "differ",
+				"type": "Text"
+			},
+			"sent_text": {
+				"__TYPE__": "FieldContent",
+				"value": "coat",
+				"type": "Text"
+			},
+			"company": {
+				"__TYPE__": "FieldContent",
+				"value": "replace",
+				"type": "Text"
+			},
+			"loading": {
+				"__TYPE__": "FieldContent",
+				"value": "molecular",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

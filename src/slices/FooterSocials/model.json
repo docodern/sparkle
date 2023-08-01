@@ -1,0 +1,35 @@
+{
+  "id": "footer",
+  "type": "SharedSlice",
+  "name": "FooterSocials",
+  "description": "Footer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "social_icon": {
+          "type": "Image",
+          "config": {
+            "label": "Social icon",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "social_link": {
+          "type": "Link",
+          "config": {
+            "label": "Social link",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      }
+    }
+  ]
+}

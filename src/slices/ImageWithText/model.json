@@ -1,0 +1,51 @@
+{
+  "id": "image_with_text",
+  "type": "SharedSlice",
+  "name": "ImageWithText",
+  "description": "ImageWithText",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image": {
+          "type": "Image",
+          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+        },
+        "mobile_image": {
+          "type": "Image",
+          "config": {
+            "label": "Mobile image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "text": {
+          "type": "Text",
+          "config": { "label": "Text", "placeholder": "" }
+        },
+        "top_ripped_image": {
+          "type": "Image",
+          "config": {
+            "label": "Top Ripped Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bottom_ripped_image": {
+          "type": "Image",
+          "config": {
+            "label": "Bottom Ripped Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "contact_form",
+  "type": "SharedSlice",
+  "name": "ContactForm",
+  "description": "ContactForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": { "label": "Title", "placeholder": "" }
+        },
+        "name_placeholder": {
+          "type": "Text",
+          "config": { "label": "Name Placeholder", "placeholder": "" }
+        },
+        "email_placeholder": {
+          "type": "Text",
+          "config": { "label": "Email Placeholder", "placeholder": "" }
+        },
+        "company": {
+          "type": "Text",
+          "config": { "label": "Company", "placeholder": "" }
+        },
+        "phone_placeholder": {
+          "type": "Text",
+          "config": { "label": "Phone Placeholder", "placeholder": "" }
+        },
+        "text_placeholder": {
+          "type": "Text",
+          "config": { "label": "Text Placeholder", "placeholder": "" }
+        },
+        "required": {
+          "type": "Text",
+          "config": { "label": "Required", "placeholder": "" }
+        },
+        "checkbox_text": {
+          "type": "Text",
+          "config": { "label": "Checkbox text", "placeholder": "" }
+        },
+        "button_text": {
+          "type": "Text",
+          "config": { "label": "Button text", "placeholder": "" }
+        },
+        "loading": {
+          "type": "Text",
+          "config": { "label": "Loading", "placeholder": "" }
+        },
+        "sent_title": {
+          "type": "Text",
+          "config": { "label": "Sent title", "placeholder": "" }
+        },
+        "sent_text": {
+          "type": "Text",
+          "config": { "label": "Sent text", "placeholder": "" }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "id": "gallery_block",
+  "type": "SharedSlice",
+  "name": "GalleryBlock",
+  "description": "GalleryBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_1": {
+          "type": "Image",
+          "config": { "label": "Image 1", "constraint": {}, "thumbnails": [] }
+        },
+        "image_2": {
+          "type": "Image",
+          "config": { "label": "Image 2", "constraint": {}, "thumbnails": [] }
+        },
+        "image_3": {
+          "type": "Image",
+          "config": { "label": "Image 3", "constraint": {}, "thumbnails": [] }
+        },
+        "image_4": {
+          "type": "Image",
+          "config": { "label": "Image 4", "constraint": {}, "thumbnails": [] }
+        },
+        "image_5": {
+          "type": "Image",
+          "config": { "label": "Image 5", "constraint": {}, "thumbnails": [] }
+        },
+        "toprippedimg": {
+          "type": "Image",
+          "config": {
+            "label": "TopRippedImg",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bottomrippedimg": {
+          "type": "Image",
+          "config": {
+            "label": "BottomRippedImg",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "doubleToLeft",
+      "name": "Double to left",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_1": {
+          "type": "Image",
+          "config": { "label": "Image 1", "constraint": {}, "thumbnails": [] }
+        },
+        "image_2": {
+          "type": "Image",
+          "config": { "label": "Image 2", "constraint": {}, "thumbnails": [] }
+        },
+        "image_3": {
+          "type": "Image",
+          "config": { "label": "Image 3", "constraint": {}, "thumbnails": [] }
+        },
+        "image_4": {
+          "type": "Image",
+          "config": { "label": "Image 4", "constraint": {}, "thumbnails": [] }
+        },
+        "image_5": {
+          "type": "Image",
+          "config": { "label": "Image 5", "constraint": {}, "thumbnails": [] }
+        },
+        "toprippedimg": {
+          "type": "Image",
+          "config": {
+            "label": "TopRippedImg",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "bottomrippedimg": {
+          "type": "Image",
+          "config": {
+            "label": "BottomRippedImg",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
