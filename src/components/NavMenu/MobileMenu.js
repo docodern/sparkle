@@ -25,7 +25,7 @@ export function MobileMenu({ locales, localeLabels, navigation, open, pathname, 
                     {navigation.data?.links.map((item) => (
                         <li key={prismic.asText(item.label)} className={`${(
                             (navigation.lang !== "lv") ? 
-                                (item.link.url.split("/")[2] ? 
+                                (item.link?.url.split("/")[2] ? 
                                     "/"+item.link.url.split("/")[2] : "/") 
                                     : item.link.url) === pathname ? "active" : ""}`}>
                             <PrismicNextLink field={item.link} onClick={() => setOpen(false)}>
