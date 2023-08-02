@@ -24,10 +24,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "hero": { "type": "SharedSlice" },
-            "image": { "type": "SharedSlice" },
-            "text_with_features": { "type": "SharedSlice" },
-            "text_with_image": { "type": "SharedSlice" },
             "video_bloks": { "type": "SharedSlice" },
             "text_block": { "type": "SharedSlice" },
             "gallery_block": { "type": "SharedSlice" },
