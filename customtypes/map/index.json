@@ -1,0 +1,17 @@
+{
+  "id": "map",
+  "label": "Map with Filters",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": { "choices": { "filter": { "type": "SharedSlice" } } }
+      }
+    }
+  }
+}

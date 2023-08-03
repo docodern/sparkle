@@ -4,6 +4,36 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type MapDocumentDataSlicesSlice = FilterSlice;
+
+/**
+ * Content for Map with Filters documents
+ */
+interface MapDocumentData {
+  /**
+   * Slice Zone field in *Map with Filters*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: map.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<MapDocumentDataSlicesSlice>;
+}
+
+/**
+ * Map with Filters document from Prismic
+ *
+ * - **API ID**: `map`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MapDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<MapDocumentData>, "map", Lang>;
+
 /**
  * Item in *Navigation → Links*
  */
@@ -71,7 +101,10 @@ type PageDocumentDataSlicesSlice =
   | ImageWithTextSlice
   | TestimonialsSlice
   | FeaturesSlice
-  | TextImageOnBackgroundSlice;
+  | TextImageOnBackgroundSlice
+  | FilterSlice
+  | VideoGallerySlice
+  | TeamBlockSlice;
 
 /**
  * Content for Page documents
@@ -366,6 +399,7 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | MapDocument
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
@@ -842,6 +876,63 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Filter → Primary*
+ */
+export interface FilterSliceDefaultPrimary {
+  /**
+   * Filter title field in *Filter → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.primary.filter_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Filter → Items*
+ */
+export interface FilterSliceDefaultItem {
+  /**
+   * Option field in *Filter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].option
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  option: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Filter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FilterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FilterSliceDefaultPrimary>,
+  Simplify<FilterSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Filter*
+ */
+type FilterSliceVariation = FilterSliceDefault;
+
+/**
+ * Filter Shared Slice
+ *
+ * - **API ID**: `filter`
+ * - **Description**: Filter
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FilterSlice = prismic.SharedSlice<"filter", FilterSliceVariation>;
+
+/**
  * Primary content in *FooterSocials → Items*
  */
 export interface FooterSliceDefaultItem {
@@ -1269,6 +1360,71 @@ export type SupportersSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TeamBlock → Items*
+ */
+export interface TeamBlockSliceDefaultItem {
+  /**
+   * Image field in *TeamBlock → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_block.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Name field in *TeamBlock → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_block.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Text field in *TeamBlock → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_block.items[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TeamBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<TeamBlockSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *TeamBlock*
+ */
+type TeamBlockSliceVariation = TeamBlockSliceDefault;
+
+/**
+ * TeamBlock Shared Slice
+ *
+ * - **API ID**: `team_block`
+ * - **Description**: TeamBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamBlockSlice = prismic.SharedSlice<
+  "team_block",
+  TeamBlockSliceVariation
+>;
+
+/**
  * Primary content in *Testimonials → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
@@ -1543,6 +1699,126 @@ export type VideoBloksSlice = prismic.SharedSlice<
   VideoBloksSliceVariation
 >;
 
+/**
+ * Primary content in *VideoGallery → Primary*
+ */
+export interface VideoGallerySliceDefaultPrimary {
+  /**
+   * Image bg field in *VideoGallery → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.primary.image_bg
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_bg: prismic.ImageField<never>;
+
+  /**
+   * Last element text field in *VideoGallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.primary.last_element_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  last_element_text: prismic.KeyTextField;
+
+  /**
+   * Load more field in *VideoGallery → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.primary.load_more
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  load_more: prismic.KeyTextField;
+
+  /**
+   * Play Image field in *VideoGallery → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.primary.playimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  playimage: prismic.ImageField<never>;
+
+  /**
+   * Video Close field in *VideoGallery → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.primary.videoClose
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  videoClose: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *VideoGallery → Items*
+ */
+export interface VideoGallerySliceDefaultItem {
+  /**
+   * Name field in *VideoGallery → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.items[].name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Video field in *VideoGallery → Items*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.items[].video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField;
+
+  /**
+   * Image field in *VideoGallery → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_gallery.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for VideoGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoGallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoGallerySliceDefaultPrimary>,
+  Simplify<VideoGallerySliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *VideoGallery*
+ */
+type VideoGallerySliceVariation = VideoGallerySliceDefault;
+
+/**
+ * VideoGallery Shared Slice
+ *
+ * - **API ID**: `video_gallery`
+ * - **Description**: VideoGallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type VideoGallerySlice = prismic.SharedSlice<
+  "video_gallery",
+  VideoGallerySliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -1553,6 +1829,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      MapDocument,
+      MapDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       PageDocument,
@@ -1570,6 +1848,9 @@ declare module "@prismicio/client" {
       FeaturesSlice,
       FeaturesSliceVariation,
       FeaturesSliceDefault,
+      FilterSlice,
+      FilterSliceVariation,
+      FilterSliceDefault,
       FooterSlice,
       FooterSliceVariation,
       FooterSliceDefault,
@@ -1583,6 +1864,9 @@ declare module "@prismicio/client" {
       SupportersSlice,
       SupportersSliceVariation,
       SupportersSliceDefault,
+      TeamBlockSlice,
+      TeamBlockSliceVariation,
+      TeamBlockSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceVariation,
       TestimonialsSliceDefault,
@@ -1595,6 +1879,9 @@ declare module "@prismicio/client" {
       VideoBloksSlice,
       VideoBloksSliceVariation,
       VideoBloksSliceDefault,
+      VideoGallerySlice,
+      VideoGallerySliceVariation,
+      VideoGallerySliceDefault,
     };
   }
 }

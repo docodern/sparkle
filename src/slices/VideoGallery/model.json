@@ -1,0 +1,60 @@
+{
+  "id": "video_gallery",
+  "type": "SharedSlice",
+  "name": "VideoGallery",
+  "description": "VideoGallery",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_bg": {
+          "type": "Image",
+          "config": { "label": "Image bg", "constraint": {}, "thumbnails": [] }
+        },
+        "last_element_text": {
+          "type": "Text",
+          "config": { "label": "Last element text", "placeholder": "" }
+        },
+        "load_more": {
+          "type": "Text",
+          "config": { "label": "Load more", "placeholder": "" }
+        },
+        "playimage": {
+          "type": "Image",
+          "config": {
+            "label": "Play Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "videoClose": {
+          "type": "Image",
+          "config": {
+            "label": "Video Close",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Name", "placeholder": "" }
+        },
+        "video": {
+          "type": "Link",
+          "config": { "label": "Video", "placeholder": "", "select": "media" }
+        },
+        "image": {
+          "type": "Image",
+          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
+        }
+      }
+    }
+  ]
+}

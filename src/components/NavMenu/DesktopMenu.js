@@ -27,8 +27,6 @@ function LangDropdown({locales, localeLabels, navigation, open, setOpen}) {
 export function DesktopMenu({locales, localeLabels, navigation, pathname}) {
 
     const [open, setOpen] = useState(false);
-    console.log(pathname)
-    console.log(navigation.data.links[0].link)
 
     return (
         <div className="hidden xl:block w-full bg-white">

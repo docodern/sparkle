@@ -33,7 +33,10 @@
             "image_with_text": { "type": "SharedSlice" },
             "testimonials": { "type": "SharedSlice" },
             "features": { "type": "SharedSlice" },
-            "text_image_on_background": { "type": "SharedSlice" }
+            "text_image_on_background": { "type": "SharedSlice" },
+            "filter": { "type": "SharedSlice" },
+            "video_gallery": { "type": "SharedSlice" },
+            "team_block": { "type": "SharedSlice" }
           }
         }
       }

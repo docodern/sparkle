@@ -1,0 +1,28 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"filter_title": {
+				"__TYPE__": "FieldContent",
+				"value": "magic",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"option",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "symbol",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,28 @@
+{
+  "id": "filter",
+  "type": "SharedSlice",
+  "name": "Filter",
+  "description": "Filter",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "filter_title": {
+          "type": "Text",
+          "config": { "label": "Filter title", "placeholder": "" }
+        }
+      },
+      "items": {
+        "option": {
+          "type": "Text",
+          "config": { "label": "Option", "placeholder": "" }
+        }
+      }
+    }
+  ]
+}
