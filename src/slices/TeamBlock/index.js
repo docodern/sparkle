@@ -6,7 +6,7 @@ const TeamBlock = ({ slice }) => {
     <section className="flex flex-col items-center gap-12 w-full px-5 pb-24 md:px-16 md:pb-32 xl:flex-row xl:justify-center xl:px-20">
       {
         slice.items.map((item) => (
-          <div className="relative w-[280px] h-auto md:w-[352px]">
+          <div key={item.name} className="relative w-[280px] h-auto md:w-[352px]">
           <PrismicNextImage
             field={item.image}
             sizes="100vw"
