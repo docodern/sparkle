@@ -23,7 +23,7 @@ export function Header({ locales = [], navigation, settings }) {
         <div id="menuBottomImg" className="absolute w-full h-auto left-0 top-[42px] z-40 md:top-[70px] xl:top-[90px]">
                     <PrismicNextImage
                     field={settings.data.menu_image}
-                    sizes="100vw"
+                    sizes="w-screen h-auto"
                     className="w-screen h-auto"
                     loading="lazy"
                     />

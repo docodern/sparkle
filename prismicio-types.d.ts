@@ -4,36 +4,6 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type MapDocumentDataSlicesSlice = FilterSlice;
-
-/**
- * Content for Map with Filters documents
- */
-interface MapDocumentData {
-  /**
-   * Slice Zone field in *Map with Filters*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: map.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<MapDocumentDataSlicesSlice>;
-}
-
-/**
- * Map with Filters document from Prismic
- *
- * - **API ID**: `map`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type MapDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<MapDocumentData>, "map", Lang>;
-
 /**
  * Item in *Navigation → Links*
  */
@@ -399,7 +369,6 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
-  | MapDocument
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
@@ -876,37 +845,157 @@ export type FeaturesSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Filter → Primary*
+ * Primary content in *MapFilter → Primary*
  */
 export interface FilterSliceDefaultPrimary {
   /**
-   * Filter title field in *Filter → Primary*
+   * First filter title field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: First filter title
+   * - **API ID Path**: filter.primary.filter_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_1: prismic.KeyTextField;
+
+  /**
+   * Second filter title field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Second filter title
+   * - **API ID Path**: filter.primary.filter_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  filter_2: prismic.KeyTextField;
+
+  /**
+   * Filter placeholder field in *MapFilter → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: filter.primary.filter_title
+   * - **API ID Path**: filter.primary.filter_placeholder
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  filter_title: prismic.KeyTextField;
+  filter_placeholder: prismic.KeyTextField;
+
+  /**
+   * Pin field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.primary.pin
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  pin: prismic.ImageField<never>;
+
+  /**
+   * Open field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.primary.open
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  open: prismic.ImageField<never>;
 }
 
 /**
- * Primary content in *Filter → Items*
+ * Primary content in *MapFilter → Items*
  */
 export interface FilterSliceDefaultItem {
   /**
-   * Option field in *Filter → Items*
+   * Name field in *MapFilter → Items*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: filter.items[].option
+   * - **API ID Path**: filter.items[].name
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  option: prismic.KeyTextField;
+  name: prismic.KeyTextField;
+
+  /**
+   * Description field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Phone field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].phone
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone: prismic.KeyTextField;
+
+  /**
+   * Phone second field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Optional
+   * - **API ID Path**: filter.items[].phone_second
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_second: prismic.KeyTextField;
+
+  /**
+   * Email field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Address field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].address
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+
+  /**
+   * Geolocation field in *MapFilter → Items*
+   *
+   * - **Field Type**: GeoPoint
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].geolocation
+   * - **Documentation**: https://prismic.io/docs/field#geopoint
+   */
+  geolocation: prismic.GeoPointField;
+
+  /**
+   * First filter option field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Optional
+   * - **API ID Path**: filter.items[].first_filter_option
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  first_filter_option: prismic.KeyTextField;
+
+  /**
+   * Second filter option field in *MapFilter → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Optional
+   * - **API ID Path**: filter.items[].second_filter_option
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  second_filter_option: prismic.KeyTextField;
 }
 
 /**
- * Default variation for Filter Slice
+ * Default variation for MapFilter Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -919,12 +1008,12 @@ export type FilterSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Slice variation for *Filter*
+ * Slice variation for *MapFilter*
  */
 type FilterSliceVariation = FilterSliceDefault;
 
 /**
- * Filter Shared Slice
+ * MapFilter Shared Slice
  *
  * - **API ID**: `filter`
  * - **Description**: Filter
@@ -1829,8 +1918,6 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      MapDocument,
-      MapDocumentData,
       NavigationDocument,
       NavigationDocumentData,
       PageDocument,

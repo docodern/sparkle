@@ -1,0 +1,88 @@
+{
+  "id": "filter",
+  "type": "SharedSlice",
+  "name": "MapFilter",
+  "description": "Filter",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "filter_1": {
+          "type": "Text",
+          "config": {
+            "label": "First filter title",
+            "placeholder": "First filter title"
+          }
+        },
+        "filter_2": {
+          "type": "Text",
+          "config": {
+            "label": "Second filter title",
+            "placeholder": "Second filter title"
+          }
+        },
+        "filter_placeholder": {
+          "type": "Text",
+          "config": { "label": "Filter placeholder", "placeholder": "" }
+        },
+        "pin": {
+          "type": "Image",
+          "config": { "label": "Pin", "constraint": {}, "thumbnails": [] }
+        },
+        "open": {
+          "type": "Image",
+          "config": { "label": "Open", "constraint": {}, "thumbnails": [] }
+        }
+      },
+      "items": {
+        "name": {
+          "type": "Text",
+          "config": { "label": "Name", "placeholder": "" }
+        },
+        "description": {
+          "type": "Text",
+          "config": { "label": "Description", "placeholder": "" }
+        },
+        "phone": {
+          "type": "Text",
+          "config": { "label": "Phone", "placeholder": "" }
+        },
+        "phone_second": {
+          "type": "Text",
+          "config": { "label": "Phone second", "placeholder": "Optional" }
+        },
+        "email": {
+          "type": "Text",
+          "config": { "label": "Email", "placeholder": "" }
+        },
+        "address": {
+          "type": "Text",
+          "config": { "label": "Address", "placeholder": "" }
+        },
+        "geolocation": {
+          "type": "GeoPoint",
+          "config": { "label": "Geolocation" }
+        },
+        "first_filter_option": {
+          "type": "Text",
+          "config": {
+            "label": "First filter option",
+            "placeholder": "Optional"
+          }
+        },
+        "second_filter_option": {
+          "type": "Text",
+          "config": {
+            "label": "Second filter option",
+            "placeholder": "Optional"
+          }
+        }
+      }
+    }
+  ]
+}
