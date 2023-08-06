@@ -22,4 +22,75 @@
     text-decoration-thickness: 3px;
     text-decoration-color: #FFA800;
   }
+
+  
+  .popUp {
+    transition: all 0.3s ease-out;
+  }
+
+  .popUp .icon {
+    display: block;
+  }
+
+  .popUp .activeIcon {
+    display: none;
+  }
+
+  .popUp .details {
+    display: none;
+  }
+  
+  /*
+   * Property styles in highlighted state.
+   */
+  
+  
+  .popUp.highlight .details {
+    position: absolute;
+    left: -130px;
+    bottom: -220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 280px;
+    min-height: 200px;
+    border-radius: 14px;
+    padding: 20px;
+    background: #FFA80095;
+  }
+
+  .popUp.highlight .icon {
+    display: none;
+  }
+  
+  .popUp.highlight .activeIcon {
+    display: block;
+  }
+  
+  .popUp.highlight .logo {
+    height: 55px;
+    width: max-content;
+    place-self: end;
+  }
+
+  .popUp.highlight .name {
+    font-family: Oswald;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: right;
+    margin: 20px 0;
+  }
+  
+  .popUp.highlight .info {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: right;
+  }
 }

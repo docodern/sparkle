@@ -34,19 +34,39 @@
           "type": "Image",
           "config": { "label": "Pin", "constraint": {}, "thumbnails": [] }
         },
+        "active_pin": {
+          "type": "Image",
+          "config": {
+            "label": "Active pin",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
         "open": {
           "type": "Image",
           "config": { "label": "Open", "constraint": {}, "thumbnails": [] }
+        },
+        "logo_placeholder": {
+          "type": "Image",
+          "config": {
+            "label": "Logo placeholder",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "alert_message": {
+          "type": "Text",
+          "config": { "label": "Alert message", "placeholder": "" }
         }
       },
       "items": {
+        "logo": {
+          "type": "Image",
+          "config": { "label": "Logo", "constraint": {}, "thumbnails": [] }
+        },
         "name": {
           "type": "Text",
           "config": { "label": "Name", "placeholder": "" }
-        },
-        "description": {
-          "type": "Text",
-          "config": { "label": "Description", "placeholder": "" }
         },
         "phone": {
           "type": "Text",

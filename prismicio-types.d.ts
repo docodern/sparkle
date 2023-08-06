@@ -889,6 +889,16 @@ export interface FilterSliceDefaultPrimary {
   pin: prismic.ImageField<never>;
 
   /**
+   * Active pin field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.primary.active_pin
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  active_pin: prismic.ImageField<never>;
+
+  /**
    * Open field in *MapFilter → Primary*
    *
    * - **Field Type**: Image
@@ -897,12 +907,42 @@ export interface FilterSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   open: prismic.ImageField<never>;
+
+  /**
+   * Logo placeholder field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.primary.logo_placeholder
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo_placeholder: prismic.ImageField<never>;
+
+  /**
+   * Alert message field in *MapFilter → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.primary.alert_message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  alert_message: prismic.KeyTextField;
 }
 
 /**
  * Primary content in *MapFilter → Items*
  */
 export interface FilterSliceDefaultItem {
+  /**
+   * Logo field in *MapFilter → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: filter.items[].logo
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
   /**
    * Name field in *MapFilter → Items*
    *
@@ -912,16 +952,6 @@ export interface FilterSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   name: prismic.KeyTextField;
-
-  /**
-   * Description field in *MapFilter → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: filter.items[].description
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  description: prismic.KeyTextField;
 
   /**
    * Phone field in *MapFilter → Items*

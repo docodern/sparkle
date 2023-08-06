@@ -6,7 +6,7 @@ export function MobileMenu({ locales, localeLabels, navigation, open, pathname, 
     return (
         <div className={`${open ? "visible" : "hidden"} absolute top-0 left-0 z-10 w-screen h-screen bg-white pt-20 md:pt-32`}>
             <nav className="flex flex-col text-center gap-10 font-montserrat font-meduim text-lg">
-                <ul className="flex flex-wrap mx-auto gap-6">
+                <ul className="flex flex-wrap mx-auto gap-6 appearance-none">
                     {locales.map((locale) => (
                         <li key={locale.lang} className={`${navigation.lang === locale.lang ? "active" : ""}`}>
                             <PrismicNextLink
@@ -21,7 +21,7 @@ export function MobileMenu({ locales, localeLabels, navigation, open, pathname, 
                     ))}
 
                 </ul>
-                <ul className="flex flex-col gap-6 text-center">
+                <ul className="flex flex-col gap-6 text-center appearance-none">
                     {navigation.data?.links.map((item) => (
                         <li key={prismic.asText(item.label)} className={`${("/" + item.link.uid) === pathname ? "active" : ""}`}>
                             <PrismicNextLink field={item.link} onClick={() => setOpen(false)}>
