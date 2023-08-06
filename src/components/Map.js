@@ -78,7 +78,7 @@ function Map({ details, pin, activePin, logoPlaceholder }) {
             }
     
           });
-    }, [details]);
+    }, [details, pin, activePin, logoPlaceholder]);
 
   
 return (

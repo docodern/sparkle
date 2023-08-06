@@ -95,7 +95,7 @@ const MapFilter = ({ slice }) => {
           (setDetails(slice.items), setAlert(true), setFirstSelected(slice.primary.filter_placeholder), setSecondSelected(slice.primary.filter_placeholder), closeAlert());
         }
     }
-  },[firstSelected, secondSelected, setDetails, setAlert]);
+  },[firstSelected, secondSelected, setDetails, setAlert, firstFilter, secondFilter, slice.items, slice.primary.filter_placeholder]);
 
   return (
     <section>
