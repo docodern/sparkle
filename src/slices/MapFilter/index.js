@@ -135,7 +135,7 @@ const MapFilter = ({ slice }) => {
       <div className={`${(details !== slice.items) ? "hidden md:flex md:justify-center md:py-20" : "hidden"}`}>
         <div className="flex flex-col w-[600px] xl:w-[820px] gap-12">
           {details?.map((info) => (
-          <div className="flex flex-row justify-between items-center w-full">
+          <div key={info.name} className="flex flex-row justify-between items-center w-full">
               <span className="flex flex-row items-center gap-12">
                 {prismic.isFilled.image(info.logo) && (
                   <PrismicNextImage
