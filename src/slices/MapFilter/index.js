@@ -22,7 +22,9 @@ function notEmpty (arr) {
   }
 }
 
-function FilterDropdown ({options, open, setOpen, setSelected }) {
+function FilterDropdown ({options, open, setOpen, setSelected, handleFilter }) {
+
+  
   return (
   <ul className={`${open ? "flex" : "hidden"} flex flex-col border-0 rounded-b-md bg-[#C4C4C466] w-full px-5 font-montserrat text-sm md:text-lg`}>
     {options.map((option) => (
@@ -73,29 +75,32 @@ const MapFilter = ({ slice }) => {
     }, 2000)
   };
 
+
+
   useEffect(() => {
 
-    if (firstSelected === slice.primary.filter_placeholder) {
-      if (secondSelected === slice.primary.filter_placeholder) {notEmpty()
+ if (firstSelected === slice.primary.filter_placeholder) {
+      if (secondSelected === slice.primary.filter_placeholder) {
         setDetails(slice.items);
       } else {
         notEmpty(secondFilter[secondSelected]) ?
         setDetails(secondFilter[secondSelected]) :
-        (setDetails(slice.items), setFirstSelected(slice.primary.filter_placeholder), setSecondSelected(slice.primary.filter_placeholder));
+        (setDetails(slice.items), setAlert(true), setFirstSelected(slice.primary.filter_placeholder), setSecondSelected(slice.primary.filter_placeholder), closeAlert());
       }
     } else {
         if (secondSelected === slice.primary.filter_placeholder) {
           notEmpty(firstFilter[firstSelected]) ?
           setDetails(firstFilter[firstSelected]) :
-          (setDetails(slice.items), setFirstSelected(slice.primary.filter_placeholder), setSecondSelected(slice.primary.filter_placeholder));
+          (setDetails(slice.items), setAlert(true), setFirstSelected(slice.primary.filter_placeholder), setSecondSelected(slice.primary.filter_placeholder), closeAlert());
         } else {
           let result = filterGroup(firstFilter[firstSelected], "second_filter_option");
           notEmpty(result[secondSelected]) ?
           setDetails(result[secondSelected]) :
           (setDetails(slice.items), setAlert(true), setFirstSelected(slice.primary.filter_placeholder), setSecondSelected(slice.primary.filter_placeholder), closeAlert());
         }
-    }
-  },[firstSelected, secondSelected, setDetails, setAlert, firstFilter, secondFilter, slice.items, slice.primary.filter_placeholder]);
+      }
+
+  },[firstSelected, secondSelected]);
 
   return (
     <section>
@@ -112,7 +117,7 @@ const MapFilter = ({ slice }) => {
                 />
             )}
           </button>
-          <FilterDropdown options={firstFilterOptions} open={openFirst} setSelected={setFirstSelected} setOpen={setOpenFirst} />
+          <FilterDropdown options={firstFilterOptions} open={openFirst} setSelected={setFirstSelected} setOpen={setOpenFirst}  />
         </div>
         <div className="md:w-[288px]">
           <p className="mb-5 text-orange">{slice.primary.filter_2}</p>
@@ -126,7 +131,7 @@ const MapFilter = ({ slice }) => {
                 />
             )}
           </button>
-          <FilterDropdown options={secondFilterOptions} open={openSecond} setSelected={setSecondSelected} setOpen={setOpenSecond} />
+          <FilterDropdown options={secondFilterOptions} open={openSecond} setSelected={setSecondSelected} setOpen={setOpenSecond}  />
         </div>
       </div>
 

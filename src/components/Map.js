@@ -1,16 +1,13 @@
-import { useEffect, useRef, useMemo, useState } from "react";
+import { useEffect } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
 
 function Map({ details, pin, activePin, logoPlaceholder }) {
-  console.log("DETAILS  " + JSON.stringify(details))
     useEffect(() => {
         const loader = new Loader({
             apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
             version: "weekly",
           });
-
-        const position = { lat: 56.953895, lng: 24.135460 }
           
           loader.load().then(async () => {
             const { Map } = await google.maps.importLibrary("maps");
