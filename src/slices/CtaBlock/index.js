@@ -1,4 +1,4 @@
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import * as prismic from "@prismicio/client";
 import { Bounded } from "@/components/Bounded";
 
@@ -16,9 +16,11 @@ const CtaBlock = ({ slice }) => {
             </span>
               <p className="text-xs md:text-lg">{prismic.isFilled.keyText(slice.primary.text_1) && (slice.primary.text_1)}</p>
               {prismic.isFilled.keyText(slice.primary.button_text_1) && (
-                <button className="border rounded-full border-orange bg-orange font-montserrat text-white h-12 w-[233px] text-lg">
+                <PrismicNextLink field={slice.primary.link_1}>
+                <button className="border rounded-full border-orange bg-orange font-montserrat text-white h-12 w-[233px] text-lg hover:scale-110 hover:bg-yellow hover:border-yellow active:bg-darkOrange">
                   {slice.primary.button_text_1}
               </button>
+              </PrismicNextLink>
               )}
           </div>
           <div className="flex flex-col gap-8 items-center w-full md:gap-12 md:justify-between xl:w-[394px]">
@@ -31,9 +33,11 @@ const CtaBlock = ({ slice }) => {
             </span>
               <p className="text-xs md:text-xl">{prismic.isFilled.keyText(slice.primary.text_2) && (slice.primary.text_2)}</p>
               {prismic.isFilled.keyText(slice.primary.button_text_2) && (
-                <button className="border rounded-full border-orange bg-orange font-montserrat text-white h-12 w-[233px] text-lg">
+                <PrismicNextLink field={slice.primary.link_2}>
+                <button className="border rounded-full border-orange bg-orange font-montserrat text-white h-12 w-[233px] text-lg hover:scale-110 hover:bg-yellow hover:border-yellow active:bg-darkOrange">
                   {slice.primary.button_text_2}
               </button>
+              </PrismicNextLink>
               )}
           </div>
       </div>

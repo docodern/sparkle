@@ -32,6 +32,10 @@
           "type": "Text",
           "config": { "label": "Button text 1", "placeholder": "" }
         },
+        "link_1": {
+          "type": "Link",
+          "config": { "label": "Link 1", "placeholder": "", "select": null }
+        },
         "title_2": {
           "type": "Text",
           "config": { "label": "Title 2", "placeholder": "" }
@@ -47,6 +51,10 @@
         "button_text_2": {
           "type": "Text",
           "config": { "label": "Button text 2", "placeholder": "" }
+        },
+        "link_2": {
+          "type": "Link",
+          "config": { "label": "Link 2", "placeholder": "", "select": null }
         }
       },
       "items": {}
@@ -79,6 +87,10 @@
           "type": "Text",
           "config": { "label": "Button text 1", "placeholder": "" }
         },
+        "link_1": {
+          "type": "Link",
+          "config": { "label": "Link 1", "placeholder": "", "select": null }
+        },
         "title_2": {
           "type": "Text",
           "config": { "label": "Title 2", "placeholder": "" }
@@ -94,6 +106,10 @@
         "button_text_2": {
           "type": "Text",
           "config": { "label": "Button text 2", "placeholder": "" }
+        },
+        "link_2": {
+          "type": "Link",
+          "config": { "label": "Link_2", "placeholder": "", "select": null }
         }
       },
       "items": {}

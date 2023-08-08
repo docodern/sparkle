@@ -82,7 +82,7 @@ const ContactForm = ({ slice }) => {
                                 <label htmlFor="checkbox">{slice.primary.checkbox_text}</label>
                             </span>
                     </span>
-                    <button type="submit" className="border-0 rounded-full bg-orange h-12 w-36 text-white font-montserrat font-medium text-lg mx-auto mt-5 md:mt-10 md:w-[182px] md:h-[62px] medium:text-2xl">
+                    <button type="submit" className="border-0 rounded-full bg-orange h-12 w-36 text-white font-montserrat font-medium text-lg mx-auto mt-5 md:mt-10 md:w-[182px] md:h-[62px] medium:text-2xl hover:scale-110 hover:bg-yellow hover:border-yellow active:bg-darkOrange">
                         {loading ? slice.primary.loading : slice.primary.button_text}
                     </button>
                 </>

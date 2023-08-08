@@ -5,6 +5,99 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for 404 documents
+ */
+interface _404DocumentData {
+  /**
+   * Bold text field in *404*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: 404.bold_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  bold_text: prismic.KeyTextField;
+
+  /**
+   * Additional text field in *404*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: 404.additional_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  additional_text: prismic.KeyTextField;
+
+  /**
+   * Return link field in *404*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: 404.return_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  return_link: prismic.LinkField;
+
+  /**
+   * Link text field in *404*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: 404.link_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  link_text: prismic.KeyTextField
+  /**
+   * Meta Description field in *404*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: 404.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *404*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: 404.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *404*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: 404.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * 404 document from Prismic
+ *
+ * - **API ID**: `404`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type _404Document<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<_404DocumentData>, "404", Lang>;
+
+/**
  * Item in *Navigation → Links*
  */
 export interface NavigationDocumentDataLinksItem {
@@ -369,6 +462,7 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | _404Document
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
@@ -583,6 +677,16 @@ export interface CtaBlockSliceDefaultPrimary {
   button_text_1: prismic.KeyTextField;
 
   /**
+   * Link 1 field in *CtaBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_block.primary.link_1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_1: prismic.LinkField;
+
+  /**
    * Title 2 field in *CtaBlock → Primary*
    *
    * - **Field Type**: Text
@@ -621,6 +725,16 @@ export interface CtaBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   button_text_2: prismic.KeyTextField;
+
+  /**
+   * Link 2 field in *CtaBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_block.primary.link_2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_2: prismic.LinkField;
 }
 
 /**
@@ -691,6 +805,16 @@ export interface CtaBlockSliceTabletFullWidthPrimary {
   button_text_1: prismic.KeyTextField;
 
   /**
+   * Link 1 field in *CtaBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_block.primary.link_1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_1: prismic.LinkField;
+
+  /**
    * Title 2 field in *CtaBlock → Primary*
    *
    * - **Field Type**: Text
@@ -729,6 +853,16 @@ export interface CtaBlockSliceTabletFullWidthPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   button_text_2: prismic.KeyTextField;
+
+  /**
+   * Link_2 field in *CtaBlock → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: cta_block.primary.link_2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link_2: prismic.LinkField;
 }
 
 /**
@@ -1948,6 +2082,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      _404Document,
+      _404DocumentData,
       NavigationDocument,
       NavigationDocumentData,
       PageDocument,
