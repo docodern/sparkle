@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
 
 function Map({ details, pin, activePin, logoPlaceholder }) {
+
+  const zoomControls = useRef();
+  const zoomIn = useRef();
+  const zoomOut = useRef();
+
+  
     useEffect(() => {
         const loader = new Loader({
             apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
@@ -13,13 +19,29 @@ function Map({ details, pin, activePin, logoPlaceholder }) {
             const { Map } = await google.maps.importLibrary("maps");
             const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary("marker");
             const { LatLng } = await google.maps.importLibrary("core");
-            const center = new LatLng(56.96561261181002, 24.14076833438038);
+            const center = new LatLng(details[0].geolocation.latitude, details[0].geolocation.longitude);
             const map = new Map(document.getElementById("map"), {
               center,
               zoom: 11,
               disableDefaultUI: true,
               mapId: "7e7caf56a6b8c51e",
             });
+
+            function initZoomControl(map) {
+              zoomIn.current.onclick = function () {
+                map.setZoom(map.getZoom() + 1);
+              };
+            
+              zoomOut.current.onclick = function () {
+                map.setZoom(map.getZoom() - 1);
+              };
+            
+              map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(
+                zoomControls.current,
+              );
+            };
+
+            initZoomControl(map);
 
             const pinImg = document.createElement("img");
 
@@ -33,7 +55,7 @@ function Map({ details, pin, activePin, logoPlaceholder }) {
                 markerView.content.classList.add("highlight");
                 markerView.zIndex = 1;
               }
-            }
+            };
 
             function buildContent(info) {
               const content = document.createElement("div");
@@ -55,7 +77,7 @@ function Map({ details, pin, activePin, logoPlaceholder }) {
                 </div>
               `;
               return content;
-            }
+            };
             
 
             for (const info of details) {
@@ -72,15 +94,23 @@ function Map({ details, pin, activePin, logoPlaceholder }) {
               AdvancedMarkerElement.addListener("click", () => {
                 toggleHighlight(AdvancedMarkerElement, info);
               });
-            }
+            };
     
           });
     }, [details, pin, activePin, logoPlaceholder]);
 
   
 return (
-    <div id="map" className="relative h-[606px] w-screen my-32 md:h-[812px] xl:h-[648px]">
+  <>
+    <div id="map" className="relative h-[606px] w-screen my-32 md:h-[812px] xl:h-[648px]"></div>
+    <div style={{display: "none"}}>
+      <div ref={zoomControls} className="controls zoom-control">
+        <button ref={zoomIn} className="zoom-control-in" title="Zoom In">+</button>
+        <button ref={zoomOut} className="zoom-control-out" title="Zoom Out">−</button>
+      </div>
     </div>
+    </>
 )
 }
+
 export default Map;
