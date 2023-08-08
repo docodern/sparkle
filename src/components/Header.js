@@ -19,12 +19,12 @@ export function Header({ locales = [], navigation, settings }) {
     const [open, setOpen] = useState(false);
 
   return (
-    <section className="relative h-[43px] md:h-[74px] xl:h-[93px]">
+    <section className="relative h-[43px] md:h-[74px] xl:h-[93px] w-full">
         <div id="menuBottomImg" className="absolute w-full h-auto left-0 top-[42px] z-40 md:top-[70px] xl:top-[90px]">
                     <PrismicNextImage
                     field={settings.data.menu_image}
-                    sizes="w-screen h-auto"
-                    className="w-screen h-auto"
+                    sizes="w-full h-auto"
+                    className="w-full h-auto"
                     loading="lazy"
                     />
             </div>
