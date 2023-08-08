@@ -5,7 +5,7 @@ import { useState } from "react";
 
 function LangDropdown({locales, localeLabels, navigation, open, setOpen}) {
     return (
-        <div className={`${open ? "block" : "hidden"} flex flex-col gap-6 bg-white absolute px-20 py-6 right-[-80px] top-[60px] overflow-hidden`}>
+        <div className={`${open ? "flex" : "hidden"} flex-col gap-6 bg-white list-none absolute px-20 py-6 right-0 top-[60px] overflow-hidden`}>
             { locales.map((locale) => (
                 navigation.lang !== locale.lang ?
                 <li key={locale.lang}>
@@ -34,7 +34,7 @@ export function DesktopMenu({locales, localeLabels, navigation, pathname}) {
                 <ul className="flex flex-row gap-6 mx-auto text-center appearance-none">
                     {navigation.data?.links.map((item) => (
                         <li key={prismic.asText(item.label)} className={`${("/" + item.link.uid) === pathname ? "active" : ""}`}>
-                            <PrismicNextLink field={item.link}>
+                            <PrismicNextLink field={item.link} className="active:no-underline">
                                 <PrismicText field={item.label} />
                             </PrismicNextLink>
                         </li>

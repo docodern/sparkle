@@ -19,7 +19,7 @@ export function Header({ locales = [], navigation, settings }) {
     const [open, setOpen] = useState(false);
 
   return (
-    <Bounded as="menu" yPadding="none" className="relative h-[43px] md:h-[74px] xl:h-[93px]">
+    <section className="relative h-[43px] md:h-[74px] xl:h-[93px]">
         <div id="menuBottomImg" className="absolute w-full h-auto left-0 top-[42px] z-40 md:top-[70px] xl:top-[90px]">
                     <PrismicNextImage
                     field={settings.data.menu_image}
@@ -28,7 +28,7 @@ export function Header({ locales = [], navigation, settings }) {
                     loading="lazy"
                     />
             </div>
-        <div className="relative flex flex-row items-center justify-between w-full h-full z-50 bg-white">
+        <div className="relative flex flex-row items-center justify-between w-full h-full z-50 bg-white mx-auto font-montserrat max-w-screen-2xl px-5 md:px-16 xl:px-20">
             <PrismicNextLink href="/" >
                 {prismic.isFilled.image(settings.data.logo) && (
                 <PrismicNextImage field={settings.data.logo} className="w-[78px] md:w-[128px] xl:w-[159px] h-auto" />
@@ -49,6 +49,6 @@ export function Header({ locales = [], navigation, settings }) {
             </button>
         </div>
         <MobileMenu locales={locales} localeLabels={localeLabels} navigation={navigation} open={open} pathname={pathname} setOpen={setOpen} />
-    </Bounded>
+      </section>
   );
 }

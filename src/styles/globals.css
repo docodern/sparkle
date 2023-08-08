@@ -71,7 +71,7 @@
   
   .popUp.highlight .logo {
     height: 55px;
-    width: max-content;
+    width: auto;
     place-self: end;
   }
 

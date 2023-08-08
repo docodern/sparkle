@@ -13,6 +13,7 @@ export function MobileMenu({ locales, localeLabels, navigation, open, pathname, 
                                 href={locale.url}
                                 locale={locale.lang}
                                 aria-label={`Change language to ${locale.lang_name}`}
+                                className="active:no-underline"
                                 onClick={() => setOpen(false)}
                             >
                             {localeLabels[locale.lang] || locale.lang}
