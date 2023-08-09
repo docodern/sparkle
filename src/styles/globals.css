@@ -23,6 +23,16 @@
     text-decoration-color: #FFA800;
   }
 
+  #video::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
+  #videoPlay::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+  }
+
   /* map popUp info */
   .popUp {
     transition: all 0.3s ease-out;
