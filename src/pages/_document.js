@@ -4,9 +4,9 @@ export default function Document() {
   return (
     <Html>
       <Head>
-      <link rel="icon" href="/favicon.ico" sizes="16x16" />
-      <link rel="icon" href="/favicon-32.ico" sizes="32x32" />
-      <link rel="icon" href="/favicon-96.ico" sizes="96x96" />
+        <link rel="icon" type="image/ico" href="/favicon.ico" sizes="16x16" />
+        <link rel="icon" type="image/ico" href="/favicon-32.ico" sizes="32x32" />
+        <link rel="icon" type="image/ico" href="/favicon-96.ico" sizes="96x96" />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
           rel="stylesheet"
