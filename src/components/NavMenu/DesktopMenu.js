@@ -34,7 +34,7 @@ export function DesktopMenu({locales, localeLabels, navigation, pathname}) {
                 <ul className="flex flex-row gap-6 mx-auto text-center appearance-none">
                     {navigation.data?.links.map((item) => (
                         <li key={prismic.asText(item.label)} className={`${("/" + item.link.uid) === pathname ? "active" : ""}`}>
-                            <PrismicNextLink field={item.link} className="active:no-underline">
+                            <PrismicNextLink field={item.link} className="active:no-underline hover:underline hover:font-semibold hover:decoration-orange hover:decoration-[3px]">
                                 <PrismicText field={item.label} />
                             </PrismicNextLink>
                         </li>

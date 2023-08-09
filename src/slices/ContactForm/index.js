@@ -7,11 +7,22 @@ const ContactForm = ({ slice }) => {
     const [sent, setSent] = useState(false);
     const [loading, setLoading] = useState(false);
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [company, setCompany] = useState("");
+    const [number, setNumber] = useState("");
+    const [text, setText] = useState("");
+
     const handleSubmit = e => {
         e.preventDefault()
         setLoading(true)
         const interval = setInterval(() => {
-            setSent(true)
+            setSent(true);
+            setName("");
+            setEmail("");
+            setCompany("");
+            setNumber("");
+            setText("");
             setLoading(false)
           }, 5000);
           return () => clearInterval(interval);
@@ -25,6 +36,8 @@ const ContactForm = ({ slice }) => {
             <input
                 type="text"
                 name="name"
+                value={name}
+                onChange={(e)=>{setName(e.target.value)}}
                 id="name"
                 placeholder={slice.primary.name_placeholder}
                 className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:w-[46%] md:text-lg md:h-10 xl:h-11"
@@ -33,6 +46,8 @@ const ContactForm = ({ slice }) => {
             <input
                 type="email"
                 name="email"
+                value={email}
+                onChange={(e)=>{setEmail(e.target.value)}}
                 id="email"
                 placeholder={slice.primary.email_placeholder}
                 className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:w-[46%] md:text-lg md:h-10 xl:h-11"
@@ -42,6 +57,8 @@ const ContactForm = ({ slice }) => {
                 <input
                 type="text"
                 name="company"
+                value={company}
+                onChange={(e)=>{setCompany(e.target.value)}}
                 id="company"
                 placeholder={slice.primary.company}
                 className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:text-lg md:h-10 xl:h-11"
@@ -51,6 +68,8 @@ const ContactForm = ({ slice }) => {
             <input
                 type="number"
                 name="number"
+                value={number}
+                onChange={(e)=>{setNumber(e.target.value)}}
                 id="number"
                 placeholder={slice.primary.phone_placeholder}
                 className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:text-lg md:h-10 xl:h-11"
@@ -58,6 +77,8 @@ const ContactForm = ({ slice }) => {
                 />
             <textarea
                 name="textarea"
+                value={text}
+                onChange={(e)=>{setText(e.target.value)}}
                 id="textarea"
                 rows="5"
                 placeholder={slice.primary.text_placeholder}

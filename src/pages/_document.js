@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/a757ef95be3f39fec6dff6f5/script.js"></script>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
           rel="stylesheet"
