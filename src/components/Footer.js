@@ -63,9 +63,8 @@ export function Footer({ settings, navigation }) {
                 <MobileDetails open={open} />
                 <span className="flex flex-row md:justify-end md:pt-5">
                     {slice.items.map((item) => (
-                      <PrismicNextLink field={item.social_link}>
+                      <PrismicNextLink field={item.social_link} key={item.social_icon.alt}>
                         <PrismicNextImage
-                        key={item.social_icon.alt}
                         field={item.social_icon}
                         sizes="100vw"
                         className="relative h-[25px] w-auto mr-8 my-8 hover:scale-105 md:mr-0 md:ml-8 md:my-3 xl:h-[36px]"
