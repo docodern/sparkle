@@ -36,7 +36,8 @@
             "text_image_on_background": { "type": "SharedSlice" },
             "filter": { "type": "SharedSlice" },
             "video_gallery": { "type": "SharedSlice" },
-            "team_block": { "type": "SharedSlice" }
+            "team_block": { "type": "SharedSlice" },
+            "blank": { "type": "SharedSlice" }
           }
         }
       }

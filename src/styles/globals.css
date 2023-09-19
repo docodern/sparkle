@@ -4,11 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white,
+/* [data-collapsible="true"].bg-white + [data-collapsible="true"].bg-white,
 [data-collapsible="true"].bg-slate-100
   + [data-collapsible="true"].bg-slate-100 {
   @apply pt-0 md:pt-0;
-}
+} */
 
 @layer base {
 
@@ -19,20 +19,36 @@
   nav ul li.active {
     font-weight: 600;
     text-decoration: underline;
+    text-underline-offset: 7px;
     text-decoration-thickness: 3px;
     text-decoration-color: #FFA800;
   }
 
-  #video::-webkit-media-controls-start-playback-button {
-    display: none!important;
-    -webkit-appearance: none;
-  }
+/* disable video default play button */
+  *::-webkit-media-controls-panel {
 
-  #videoPlay::-webkit-media-controls-start-playback-button {
     display: none!important;
+  
     -webkit-appearance: none;
+  
   }
-
+  
+  *::-webkit-media-controls-play-button {
+  
+    display: none!important;
+  
+    -webkit-appearance: none;
+  
+  }
+  
+  *::-webkit-media-controls-start-playback-button {
+  
+    display: none!important;
+  
+    -webkit-appearance: none;
+  
+  }
+  
   /* map popUp info */
   .popUp {
     transition: all 0.3s ease-out;

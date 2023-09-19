@@ -30,9 +30,9 @@ const ContactForm = ({ slice }) => {
 
 
   return (
-    <Bounded as="section" className={"text-center"}>
-      <h3 className="mb-10 text-2xl font-oswald font-medium md:mb-20 md:text-3xl">{slice.primary.title}</h3>
-      <form onSubmit={handleSubmit} className="flex flex-wrap m-auto justify-between gap-2.5 md:w-[608px]">
+    <Bounded as="section" yPadding="none" className={"text-center pt-10 pb-28 md:pt-6 xl:pt-7"}>
+      <h3 className="mb-6 pt-2 text-2xl font-oswald font-medium md:mb-16 md:text-3xl">{slice.primary.title}</h3>
+      <form onSubmit={handleSubmit} className="flex flex-wrap m-auto justify-between gap-2.5 md:w-[608px] xl:gap-3">
             <input
                 type="text"
                 name="name"
@@ -40,7 +40,7 @@ const ContactForm = ({ slice }) => {
                 onChange={(e)=>{setName(e.target.value)}}
                 id="name"
                 placeholder={slice.primary.name_placeholder}
-                className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:w-[46%] md:text-lg md:h-10 xl:h-11"
+                className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:w-[47.5%] md:text-lg md:h-10 xl:h-11"
                 required
                 />
             <input
@@ -50,7 +50,7 @@ const ContactForm = ({ slice }) => {
                 onChange={(e)=>{setEmail(e.target.value)}}
                 id="email"
                 placeholder={slice.primary.email_placeholder}
-                className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:w-[46%] md:text-lg md:h-10 xl:h-11"
+                className="border-0 rounded-md bg-[#C4C4C466] w-full h-9 pl-3 font-montserrat text-sm placeholder:text-night md:w-[47.5%] md:text-lg md:h-10 xl:h-11"
                 required
                 />
             {prismic.isFilled.keyText(slice.primary.company) && (
@@ -80,7 +80,7 @@ const ContactForm = ({ slice }) => {
                 value={text}
                 onChange={(e)=>{setText(e.target.value)}}
                 id="textarea"
-                rows="5"
+                rows="8"
                 placeholder={slice.primary.text_placeholder}
                 className="border-0 rounded-md bg-[#C4C4C466] w-full pt-2 pl-3 font-montserrat text-sm placeholder:text-night md:text-lg"
                 required
@@ -90,7 +90,7 @@ const ContactForm = ({ slice }) => {
                 <p className="text-sm md:text-xl">{slice.primary.sent_text}</p>
             </span>
             : <>
-                    <span className="flex flex-wrap text-left gap-2.5 text-night text-xs md:gap-5 md:text-sm">
+                    <span className="flex flex-wrap text-left gap-2.5 pt-2 text-night text-xs md:gap-2 md:text-sm xl:gap-6">
                         <p>{slice.primary.required}</p>
                             <span className="flex flex-row gap-2.5 items-start">
                                 <input
@@ -103,7 +103,7 @@ const ContactForm = ({ slice }) => {
                                 <label htmlFor="checkbox">{slice.primary.checkbox_text}</label>
                             </span>
                     </span>
-                    <button type="submit" className="border-0 rounded-full bg-orange h-12 w-36 text-white font-montserrat font-medium text-lg mx-auto mt-5 md:mt-10 md:w-[182px] md:h-[62px] medium:text-2xl hover:scale-110 hover:bg-yellow hover:border-yellow active:bg-darkOrange">
+                    <button type="submit" className="border-0 rounded-full bg-orange h-12 w-36 text-white font-montserrat font-medium text-lg mx-auto mt-5 md:mt-10 md:w-[182px] md:h-[62px] md:text-2xl hover:scale-110 hover:bg-yellow hover:border-yellow active:bg-darkOrange">
                         {loading ? slice.primary.loading : slice.primary.button_text}
                     </button>
                 </>

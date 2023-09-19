@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  blank: dynamic(() => import("./Blank")),
   contact_form: dynamic(() => import("./ContactForm")),
   cta_block: dynamic(() => import("./CtaBlock")),
   features: dynamic(() => import("./Features")),

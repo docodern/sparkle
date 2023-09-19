@@ -30,8 +30,8 @@ export function DesktopMenu({locales, localeLabels, navigation, pathname}) {
 
     return (
         <div className="hidden xl:block w-full bg-white">
-            <nav className="flex flex-row justify-evenly text-center gap-10 font-montserrat font-meduim text-lg">
-                <ul className="flex flex-row gap-6 mx-auto text-center appearance-none">
+            <nav className="flex flex-row justify-between text-center gap-10 mt-8 font-montserrat font-medium text-lg">
+                <ul className="flex flex-row gap-[37px] pl-[57px] mx-auto text-center appearance-none">
                     {navigation.data?.links.map((item) => (
                         <li key={prismic.asText(item.label)} className={`${("/" + item.link.uid) === pathname ? "active" : ""}`}>
                             <PrismicNextLink field={item.link} className="active:no-underline hover:underline hover:font-semibold hover:decoration-orange hover:decoration-[3px]">

@@ -20,7 +20,7 @@ module.exports = {
         'night': '#2F4858',
         'orange': '#FFA800',
         'darkOrange': '#FF8A00',
-        'yellow': '#FFCB66'
+        'yellow': '#FFDA16'
       },
     },
   },

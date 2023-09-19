@@ -167,7 +167,8 @@ type PageDocumentDataSlicesSlice =
   | TextImageOnBackgroundSlice
   | FilterSlice
   | VideoGallerySlice
-  | TeamBlockSlice;
+  | TeamBlockSlice
+  | BlankSlice;
 
 /**
  * Content for Page documents
@@ -466,6 +467,33 @@ export type AllDocumentTypes =
   | NavigationDocument
   | PageDocument
   | SettingsDocument;
+
+/**
+ * Default variation for Blank Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlankSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Blank*
+ */
+type BlankSliceVariation = BlankSliceDefault;
+
+/**
+ * Blank Shared Slice
+ *
+ * - **API ID**: `blank`
+ * - **Description**: Blank
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlankSlice = prismic.SharedSlice<"blank", BlankSliceVariation>;
 
 /**
  * Primary content in *ContactForm → Primary*
@@ -2091,6 +2119,9 @@ declare module "@prismicio/client" {
       SettingsDocument,
       SettingsDocumentData,
       AllDocumentTypes,
+      BlankSlice,
+      BlankSliceVariation,
+      BlankSliceDefault,
       ContactFormSlice,
       ContactFormSliceVariation,
       ContactFormSliceDefault,

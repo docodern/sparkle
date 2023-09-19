@@ -33,15 +33,15 @@ const Testimonials = ({ slice }) => {
   }, [])
 
   return (
-    <Bounded as="section">
+    <Bounded as="section" >
       {prismic.isFilled.group(slice.items) && (
-        <div className="flex flex-col mx-auto gap-5 xl:w-1/2">
+        <div className="flex flex-col mx-auto xl:w-[602px] pb-16">
           <p className="font-oswald font-medium text-lg md:text-2xl">{items[item].name}</p>
-          <p className="text-sm md:text-lg">{items[item].company}</p>
+          <p className="text-sm mb-8 md:text-lg">{items[item].company}</p>
           <p className="text-xs italic md:text-2xl">{items[item].text}</p>
-          <span className="flex flex-row gap-6">
+          <span className="flex flex-row gap-8 mt-12">
             {prismic.isFilled.image(slice.primary.button) && (
-              <button className="p-2">
+              <button className="p-1">
                 <PrismicNextImage 
                   field={slice.primary.button}
                   sizes="100vw"
@@ -51,7 +51,7 @@ const Testimonials = ({ slice }) => {
               </button>
             )}
             {prismic.isFilled.image(slice.primary.button) && (
-              <button className="p-2">
+              <button className="p-1">
                 <PrismicNextImage
                   id="next"
                   field={slice.primary.button}
